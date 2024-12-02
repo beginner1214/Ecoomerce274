@@ -1,64 +1,96 @@
 .cart-container {
-   width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    margin-top: 50px;
-  
+  width: 100%; /* Make the container responsive */
+  max-width: 800px; /* Limit the maximum width */
+  margin: 0 auto;
+  padding: 15px; /* Adjust padding for smaller screens */
+  margin-top: 30px; /* Reduce top margin */
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Reduce gap between items */
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: column; /* Stack items on smaller screens */
+  align-items: flex-start; /* Align items to the left for smaller screens */
+  gap: 10px; /* Adjust gap for smaller items */
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.cart-image {
+  width: 80px; /* Reduce image size for smaller screens */
+  height: 80px;
+  object-fit: cover;
+}
+
+.cart-details {
+  flex: 1;
+}
+
+.cart-actions {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  gap: 8px;
+  align-items: center;
+}
+
+.cart-summary {
+  text-align: right;
+  margin-top: 15px; /* Reduce top margin */
+  font-size: 0.9rem; /* Adjust font size for better readability */
+}
+
+.remove-button {
+  color: red;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 0.9rem; /* Adjust button font size */
+}
+
+.checkoutbut {
+  height: 45px; /* Adjust height for smaller screens */
+  width: 180px; /* Reduce width for compact design */
+  background-color: rgb(242, 245, 240);
+  padding: 8px; /* Adjust padding */
+  border-radius: 20px;
+  margin-top: 5px;
+  font-size: 0.9rem; /* Adjust font size */
+}
+
+.checkoutbut:hover {
+  background-color: chartreuse;
+  /* Maintain other properties */
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 600px) {
+  .cart-container {
+      padding: 10px; /* Compact padding for smaller screens */
+      margin-top: 20px; /* Reduce top margin */
   }
-  
-  .cart-items {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
+
   .cart-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
+      flex-direction: column; /* Stack item details vertically */
+      gap: 10px; /* Adjust spacing */
   }
-  
+
   .cart-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+      width: 60px; /* Smaller images for narrow screens */
+      height: 60px;
   }
-  
-  .cart-details {
-    flex: 1;
-  }
-  
-  .cart-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
+
   .cart-summary {
-    text-align: right;
-    margin-top: 20px;
+      font-size: 0.8rem; /* Smaller font size for summaries */
   }
-  
-  .remove-button {
-    color: red;
-    border: none;
-    background: none;
-    cursor: pointer;
+
+  .checkoutbut {
+      height: 40px; /* Compact button size */
+      width: 160px; /* Reduce width for mobile */
+      font-size: 0.8rem; /* Adjust font size */
   }
-  .checkoutbut{
-    height: 50px;
-    width: 200px;
-    background-color: rgb(242, 245, 240);
-    padding: 10px;
-    border-radius: 20px;
-    margin-top: 5px;
-  }
-  .checkoutbut:hover{
-    height: 50px;
-    width: 200px;
-    background-color: chartreuse;
-    padding: 10px;
-    border-radius: 20px;
-  }
+}
